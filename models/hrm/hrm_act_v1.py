@@ -263,6 +263,7 @@ class HierarchicalReasoningModel_ACTV1(nn.Module):
 
             # if training, and ACT is enabled
             if self.training and (self.config.halt_max_steps > 1):
+                # Review by SB
                 # Halt signal
                 # NOTE: During evaluation, always use max steps, this is to guarantee the same halting steps inside a batch for batching purposes
                 halted = halted | (q_halt_logits > q_continue_logits)
